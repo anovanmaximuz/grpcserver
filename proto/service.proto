@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/anovanmaximuz/grpcserver";
+
+message Request {
+  int64 number = 1;
+  int64 ordinal = 2;
+}
+
+message Response {
+  int64 result = 1;
+}
+
+service MathService {
+  rpc Ordinal(Request) returns (Response);
+}
